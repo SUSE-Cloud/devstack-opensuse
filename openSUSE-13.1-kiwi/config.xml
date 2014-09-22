@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<image schemaversion="6.1" name="VagrantBox-openSUSE-13.1">
+  <description type="system">
+    <author>Thomas Bechtold</author>
+    <contact>tbechtold@suse.com</contact>
+    <specification>
+      openSUSE 13.1 vagrant box for Devstack usage
+    </specification>
+  </description>
+  <preferences>
+    <type image="vmx" filesystem="ext4" fsmountoptions="defaults,user_xattr" boot="vmxboot/suse-13.1" format="vagrant" bootloader="grub2" kernelcmdline="nomodeset">
+      <vagrantconfig provider="libvirt" virtualsize="30"/>
+      <vagrantconfig provider="virtualbox" virtualsize="30"/>
+      <machine memory="512" guestOS="suse" HWversion="9" ovftype="vmware">
+        <vmdisk id="0" controller="lsilogic"/>
+      </machine>
+      <size unit="G">20</size>
+    </type>
+    <version>0.1.0</version>
+    <packagemanager>zypper</packagemanager>
+    <locale>en_US</locale>
+    <keytable>de.map.gz</keytable>
+    <timezone>Europe/Berlin</timezone>
+    <hwclock>utc</hwclock>
+    <rpm-excludedocs>true</rpm-excludedocs>
+    <bootsplash-theme>openSUSE</bootsplash-theme>
+    <bootloader-theme>openSUSE</bootloader-theme>
+  </preferences>
+  <users group="root">
+    <user name="root" password="vh4vw1N4alxKQ" home="/root"/>
+  </users>
+  <users group="vagrant">
+    <user name="vagrant" password="vh4vw1N4alxKQ" home="/home/vagrant"/>
+  </users>
+  <repository type="yast2">
+    <source path="obs://13.1/repo/oss"/>
+  </repository>
+  <repository type="rpm-md">
+    <source path="http://download.opensuse.org/update/13.1/"/>
+  </repository>
+  <packages type="image">
+    <namedCollection name="base"/>
+    <product name="openSUSE"/>
+    <package name="plymouth-branding-openSUSE" bootinclude="true"/>
+    <package name="grub2-branding-openSUSE" bootinclude="true"/>
+    <package name="virtualbox-guest-tools"/>
+    <package name="ifplugd"/>
+    <package name="iputils"/>
+    <package name="vim"/>
+    <package name="grub2"/>
+    <package name="syslinux"/>
+    <package name="lvm2"/>
+    <package name="plymouth"/>
+    <package name="fontconfig"/>
+    <package name="fonts-config"/>
+    <package name="tar"/>
+    <package name="parted"/>
+    <package name="autoyast2"/>
+    <package name="sudo"/>
+    <package name="rsync"/>
+    <package name="kernel-default"/>
+    <package name="virtualbox-guest-kmp-default"/>
+    <package name="kiwi"/>
+    <package name="kiwi-tools"/>
+    <package name="kiwi-desc-isoboot"/>
+    <package name="kiwi-desc-netboot"/>
+    <package name="kiwi-desc-oemboot"/>
+    <package name="kiwi-desc-vmxboot"/>
+    <package name="kiwi-templates"/>
+    <package name="btrfsprogs"/>
+    <package name="genisoimage"/>
+    <package name="squashfs"/>
+    <!-- extras for devstack -->
+    <package name="git"/>
+    <package name="screen"/>
+    <package name="bc"/>
+    <package name="bridge-utils"/>
+    <package name="ca-certificates-mozilla"/>
+    <package name="curl"/>
+    <package name="euca2ools"/>
+    <package name="gcc"/>
+    <package name="git-core"/>
+    <package name="iputils"/>
+    <package name="libopenssl-devel"/>
+    <package name="lsof"/>
+    <package name="make"/>
+    <package name="openssh"/>
+    <package name="openssl"/>
+    <package name="psmisc"/>
+    <package name="python-pylint"/>
+    <package name="python-unittest2"/>
+    <package name="screen"/>
+    <package name="tar"/>
+    <package name="tcpdump"/>
+    <package name="unzip"/>
+    <package name="wget"/>
+    <package name="libxml2-devel"/>
+    <package name="python-PasteDeploy"/>
+    <package name="python-Routes"/>
+    <package name="python-SQLAlchemy"/>
+    <package name="python-argparse"/>
+    <package name="python-devel"/>
+    <package name="python-eventlet"/>
+    <package name="python-greenlet"/>
+    <package name="python-iso8601"/>
+    <package name="python-pyOpenSSL"/>
+    <package name="python-wsgiref"/>
+    <package name="python-xattr"/>
+    <package name="cyrus-sasl-devel"/>
+    <package name="openldap2-devel"/>
+    <package name="python-Paste"/>
+    <package name="python-PasteDeploy"/>
+    <package name="python-PasteScript"/>
+    <package name="python-Routes"/>
+    <package name="python-SQLAlchemy"/>
+    <package name="python-WebOb"/>
+    <package name="python-devel"/>
+    <package name="python-greenlet"/>
+    <package name="python-lxml"/>
+    <package name="python-mysql"/>
+    <package name="python-pysqlite"/>
+    <package name="sqlite3"/>
+    <package name="python-dateutil"/>
+    <package name="fping"/>
+    <package name="curl"/>
+    <package name="dnsmasq"/>
+    <package name="dnsmasq-utils"/>
+    <package name="conntrack-tools"/>
+    <package name="ebtables"/>
+    <package name="gawk"/>
+    <package name="genisoimage"/>
+    <package name="iptables"/>
+    <package name="iputils"/>
+    <package name="kpartx"/>
+    <package name="polkit"/>
+    <package name="python-M2Crypto"/>
+    <package name="python-Paste"/>
+    <package name="python-PasteDeploy"/>
+    <package name="python-Routes"/>
+    <package name="python-SQLAlchemy"/>
+    <package name="python-Tempita"/>
+    <package name="python-boto"/>
+    <package name="python-cheetah"/>
+    <package name="python-eventlet"/>
+    <package name="python-feedparser"/>
+    <package name="python-greenlet"/>
+    <package name="python-iso8601"/>
+    <package name="python-kombu"/>
+    <package name="python-libxml2"/>
+    <package name="python-lockfile"/>
+    <package name="python-lxml"/>
+    <package name="python-mox"/>
+    <package name="python-mysql"/>
+    <package name="python-numpy"/>
+    <package name="python-paramiko"/>
+    <package name="python-sqlalchemy-migrate"/>
+    <package name="python-suds"/>
+    <package name="python-xattr"/>
+    <package name="socat"/>
+    <package name="sqlite3"/>
+    <package name="sudo"/>
+    <package name="vlan"/>
+    <package name="genisoimage"/>
+    <package name="lvm2"/>
+    <package name="open-iscsi"/>
+    <package name="sysfsutils"/>
+    <package name="sg3_utils"/>
+    <package name="python-numpy"/>
+    <package name="lvm2"/>
+    <package name="tgt"/>
+    <package name="qemu-tools"/>
+    <package name="python-devel"/>
+    <package name="postgresql-devel"/>
+    <package name="open-iscsi"/>
+    <package name="python-CherryPy"/>
+    <package name="python-Paste"/>
+    <package name="python-PasteDeploy"/>
+    <package name="python-Routes"/>
+    <package name="python-Sphinx"/>
+    <package name="python-WebOb"/>
+    <package name="python-anyjson"/>
+    <package name="python-beautifulsoup"/>
+    <package name="python-coverage"/>
+    <package name="python-dateutil"/>
+    <package name="python-eventlet"/>
+    <package name="python-kombu"/>
+    <package name="python-mox"/>
+    <package name="python-nose"/>
+    <package name="python-pylint"/>
+    <package name="cvs"/>
+    <package name="cvsps"/>
+    <package name="git-cvs"/>
+    <package name="git-email"/>
+    <package name="git-gui"/>
+    <package name="git-svn"/>
+    <package name="git-web"/>
+    <package name="gitk"/>
+    <package name="libICE6"/>
+    <package name="libSM6"/>
+    <package name="libXmuu1"/>
+    <package name="libXss1"/>
+    <package name="libXt6"/>
+    <package name="libapr-util1"/>
+    <package name="libapr1"/>
+    <package name="libserf-1-1"/>
+    <package name="openssh-askpass"/>
+    <package name="perl-Authen-SASL"/>
+    <package name="perl-Clone"/>
+    <package name="perl-DBD-SQLite"/>
+    <package name="perl-DBI"/>
+    <package name="perl-Digest-HMAC"/>
+    <package name="perl-IO-Socket-SSL"/>
+    <package name="perl-MLDBM"/>
+    <package name="perl-Net-Daemon"/>
+    <package name="perl-Net-LibIDN"/>
+    <package name="perl-Net-SMTP-SSL"/>
+    <package name="perl-Net-SSLeay"/>
+    <package name="perl-Params-Util"/>
+    <package name="perl-PlRPC"/>
+    <package name="perl-SQL-Statement"/>
+    <package name="perl-Term-ReadKey"/>
+    <package name="python-psycopg2"/>
+    <package name="subversion"/>
+    <package name="subversion-perl"/>
+    <package name="tar-lang"/>
+    <package name="tcl"/>
+    <package name="tcsh"/>
+    <package name="tk"/>
+    <package name="xauth"/>
+    <package name="xhost"/>
+    <package name="ack"/>
+    <package name="postgresql-server"/>
+    <package name="cron"/>
+    <package name="cronie"/>
+    <package name="erlang"/>
+    <package name="exim"/>
+    <package name="libltdl7"/>
+    <package name="logrotate"/>
+    <package name="rabbitmq-server"/>
+    <package name="unixODBC"/>
+    <package name="postgresql-init"/>
+    <package name="postgresql-server"/>
+    <package name="postgresql92"/>
+    <package name="postgresql92-server"/>
+    <package name="patch"/>
+    <package name="tcpdump"/>
+    <package name="lsof"/>
+    <package name="telnet"/>
+</packages>
+  <packages type="bootstrap">
+    <package name="udev"/>
+    <package name="filesystem"/>
+    <package name="glibc-locale"/>
+    <package name="cracklib-dict-full"/>
+    <package name="ca-certificates"/>
+    <package name="module-init-tools"/>
+  </packages>
+  <packages type="delete">
+    <package name="kernel-debug"/>
+  </packages>
+</image>

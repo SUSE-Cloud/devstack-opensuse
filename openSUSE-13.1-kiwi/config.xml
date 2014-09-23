@@ -89,7 +89,6 @@
     <package name="psmisc"/>
     <package name="python-pylint"/>
     <package name="python-unittest2"/>
-    <package name="screen"/>
     <package name="tar"/>
     <package name="tcpdump"/>
     <package name="unzip"/>

@@ -81,7 +81,6 @@
     <package name="euca2ools"/>
     <package name="gcc"/>
     <package name="git-core"/>
-    <package name="iputils"/>
     <package name="libopenssl-devel"/>
     <package name="lsof"/>
     <package name="make"/>

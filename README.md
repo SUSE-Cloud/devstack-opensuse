@@ -17,3 +17,19 @@ Add the box to vagrant with:
 ```
 vagrant box add toabctl/devstack-openSUSE13.1 /tmp/opensuse-13.1-box/VagrantBox-openSUSE-13.1.x86_64-0.1.0.libvirt.box
 ```
+
+## Setup Devstack
+
+```
+vagrant up
+vagrant ssh
+cd devstack
+FORCE=yes ./stack.sh
+```
+
+Running Tempest is also easy:
+
+```
+cd /opt/stack/tempest
+./run_tempest.sh -N -s -C etc/tempest.conf
+```
